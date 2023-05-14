@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h4 class="flex-grow mb-4">Please select Gender</h4>
+    <div class="container flex-grow">
+      <input type="radio" id="male" value="male" name="payement-mode" onchange="setGender('male')" checked />
+      <label for="male">
+        <span>
+          <i class="fa fa-male mr-1"></i></span>
+      </label>
+
+      <input type="radio" name="payement-mode" id="female" value="female" onchange="setGender('female')" />
+      <label for="female">
+        <span>
+          <i class="fa fa-female mr-1"></i></span>
+      </label>
+    </div>
+  </div>
+  <script>
+    const container = document.querySelector('.container');
+    function setGender(mode) {
+      if (mode === 'male') {
+        container.classList.add('male-selected');
+        container.classList.remove('female-selected');
+        container.style.boxShadow = '10px 10px 20px rgba(0, 0, 0, 0.07), -10px -10px 20px rgba(255, 255, 255, 0.8), 0px 0px 10px blue';
+      } else {
+        container.classList.add('female-selected');
+        container.classList.remove('male-selected');
+        container.style.boxShadow = '10px 10px 20px rgba(0, 0, 0, 0.07), -10px -10px 20px rgba(255, 255, 255, 0.8), 0px 0px 10px pink';
+      }
+    }
+  </script>
+</body>
+
+</html>
